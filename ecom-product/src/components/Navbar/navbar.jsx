@@ -1,7 +1,20 @@
 import React from 'react'
 import {Link,NavLink} from 'react-router-dom'
+import cartIcon from '../../../../images/icon-cart.svg'
+import avatarImage from '../../../../images/image-avatar.png'
+
+
 
 const Navbar = () => {
+   const navItems = [
+  { name: "Collections", path: "/collections" },
+  { name: "Men", path: "/men" },
+  { name: "Women", path: "/women" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+   ];
+
+
   return (
     <header className='shadow sticky z-50 top-0'>
         <nav className='bg-white border-gray-200 px-3 lg:px-6 py-6.5'>
@@ -10,7 +23,28 @@ const Navbar = () => {
                     sneakers
                   </h1>
                    
-                   
+                   {navItems.map((item) => (
+                      <NavLink
+                        key={item.name}
+                        to={item.path}
+                        className={({ isActive }) =>
+                          `relative flex h-full items-center text-[16px] transition-colors no-underline
+                          ${
+                            isActive
+                              ? "text-[#222222] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-orange-500"
+                              : "text-gray-500 hover:text-gray-800"
+                          }`
+                        }
+                      >
+                        {item.name}
+                      </NavLink>
+                    ))}
+
+                    <NavLink className='relative flex h-full items-center text-[16px] transition-colors no-underline text-gray-500 hover:text-gray-800' to="/cart">
+                      <img src={cartIcon} alt="cart" className='w-6 h-6' />
+                    </NavLink>
+
+                    <img src={avatarImage} alt="avatar" className='w-10 h-10 rounded-full' />
 
 
                   
