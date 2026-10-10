@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link,NavLink} from 'react-router-dom'
-import cartIcon from '../../../../images/icon-cart.svg'
-import avatarImage from '../../../../images/image-avatar.png'
+import cartIcon from '../../../images/icon-cart.svg'
+import avatarImage from '../../../images/image-avatar.png'
 
 
 
