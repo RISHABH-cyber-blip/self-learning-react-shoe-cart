@@ -9,7 +9,7 @@ const Pimage = () => {
     const [selectedImage, setSelectedImage] = React.useState(images[0]);
     
   return (
-        <div className='flex flex-col gap-5'>
+        <div className='flex flex-col gap-5 ml-10 md:ml-20'>
             <div className=' w-full max-w-* object-cover rounded-xl'>
                     <div className='w-full md:w-100 aspect-square  aspect-square object-cover rounded'>
                         <img src={images[0]} alt="product" className='rounded-xl w-full h-full object-cover' />
