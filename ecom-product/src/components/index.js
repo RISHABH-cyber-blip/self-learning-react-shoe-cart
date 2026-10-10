@@ -1,4 +1,5 @@
-import navbar from './Navbar/navbar';
+import Navbar from './Navbar/navbar';
 import product from './Product/product';
+import Cart from './Cart/cart';
 
-export { navbar, product };
+export { Navbar, product, Cart };

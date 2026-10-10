@@ -1,11 +1,13 @@
 import React from 'react'
-import {Link,NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import cartIcon from '../../../images/icon-cart.svg'
 import avatarImage from '../../../images/image-avatar.png'
+import Cart from '../Cart/cart'
 
 
 
 const Navbar = () => {
+  const [isCartOpen, setIsCartOpen] = React.useState(false);
    const navItems = [
   { name: "Collections", path: "/collections" },
   { name: "Men", path: "/men" },
@@ -43,9 +45,21 @@ const Navbar = () => {
                   </div>
 
                   <div className='flex items-center gap-12'>
-                    <NavLink className='relative flex h-full items-center text-[16px] transition-colors no-underline text-gray-500 hover:text-gray-800' to="/cart">
-                      <img src={cartIcon} alt="cart" className='w-6 h-6' />
-                    </NavLink>
+                        <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => setIsCartOpen((prev) => !prev)}
+                          aria-label="Open cart"
+                          aria-expanded={isCartOpen}
+                          className="cursor-pointer"
+                        >
+                          <img src={cartIcon} alt="" className="h-6 w-6" />
+                        </button>
+
+                        {isCartOpen && (
+                          <Cart onClose={() => setIsCartOpen(false)} />
+                        )}
+                      </div>
 
                     <img src={avatarImage} alt="avatar" className='w-10 h-10 rounded-full' />
                   </div>

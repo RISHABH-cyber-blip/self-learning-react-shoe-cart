@@ -49,7 +49,7 @@ const Pcontent = () => {
             </div>
 
             <div>
-                <button onclick="addToCart()" className='flex items-center justify-center gap-2 w-[250px] rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
+                <button  className='flex items-center justify-center gap-2 w-[250px] rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
                   <img src="/images/icon-cart.svg" alt="cart" className='inline-block mr-2 brightness-0' />
                   <span className=' font-bold'>Add to cart</span>
                 </button>
