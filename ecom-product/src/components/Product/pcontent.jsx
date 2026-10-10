@@ -1,7 +1,28 @@
 import React from 'react'
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 const Pcontent = () => {
+  const { addToCart } = useContext(CartContext);
+
   const [count, setCount] = React.useState(0);
+
+  const handleAddToCart = () => {
+  if (count === 0) {
+    alert("Please select a minimum quantity of 1 before adding to cart.");
+    setCount(1); 
+    return;
+  }
+
+  addToCart({
+    id: "fall-limited-edition-sneaker",
+    title: "Fall Limited Edition Sneaker",
+    image: "/images/image-product-1.jpg",
+    price: 125,
+    quantity: count,
+    });
+  };
+
   return (
     <div className='flex flex-col ml-0  md:ml-0 md:mt-10 mt-5 '>
         <h1 className='ml-0 text-sm font-bold uppercase tracking-[2px] text-gray-500 sm:text-[13px] sm:tracking-[3px]'>
@@ -49,7 +70,7 @@ const Pcontent = () => {
             </div>
 
             <div>
-                <button  className='flex items-center justify-center gap-2 w-[250px] rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
+                <button onClick={handleAddToCart} className='flex items-center justify-center gap-2 w-[250px] rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
                   <img src="/images/icon-cart.svg" alt="cart" className='inline-block mr-2 brightness-0' />
                   <span className=' font-bold'>Add to cart</span>
                 </button>
