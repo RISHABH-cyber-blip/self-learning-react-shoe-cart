@@ -31,7 +31,7 @@ const Pimage = () => {
                 <div className="w-full max-w-md">
                     <div className="w-full aspect-square">
                         <img
-                            src={images[selectedImage]}
+                            src={images[0]}
                             alt="Fall Limited Edition Sneaker"
                             onClick={() => setIsLightboxOpen(true)}
                             className="rounded-xl w-full h-full object-cover cursor-pointer"
@@ -44,7 +44,9 @@ const Pimage = () => {
                     {images.map((image, index) => (
                         <button
                             key={index}
-                            onClick={() => setSelectedImage(index)}
+                            onClick={() => {
+                                setSelectedImage(index)
+                                setIsLightboxOpen(true)}}
                             className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${
                                 selectedImage === index
                                     ? 'border-orange-500 opacity-60'
