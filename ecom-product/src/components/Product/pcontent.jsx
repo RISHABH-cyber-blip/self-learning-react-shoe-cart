@@ -1,6 +1,10 @@
 import React from 'react'
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import productImage1 from '../../../images/image-product-1.jpg'
+import iconMinus from '../../../images/icon-minus.svg'
+import iconPlus from '../../../images/icon-plus.svg'
+import iconCart from '../../../images/icon-cart.svg'
 
 const Pcontent = () => {
   const { addToCart } = useContext(CartContext);
@@ -17,7 +21,7 @@ const Pcontent = () => {
   addToCart({
     id: "fall-limited-edition-sneaker",
     title: "Fall Limited Edition Sneaker",
-    image: "/images/image-product-1.jpg",
+    image: productImage1,
     price: 125,
     quantity: count,
     });
@@ -61,17 +65,17 @@ const Pcontent = () => {
 
             <div className='flex items-center justify-between w-[120px] rounded-md bg-[#f7f8fd]'>
                <button onClick={() => setCount(Math.max(0, count - 1))} className='cursor-pointer'>
-                 <img src="/images/icon-minus.svg" alt="minus" className='bg-[#f7f8fd] p-2 rounded-l-md' />
+                 <img src={iconMinus} alt="minus" className='bg-[#f7f8fd] p-2 rounded-l-md' />
                </button>
                 <span className='bg-[#f7f8fd] p-2 text-[#1d2026] font-bold'>{count}</span>
                 <button onClick={() => setCount(count + 1)} className='cursor-pointer'>
-                  <img src="/images/icon-plus.svg" alt="plus" className='bg-[#f7f8fd] p-2 rounded-r-md' />
+                  <img src={iconPlus} alt="plus" className='bg-[#f7f8fd] p-2 rounded-r-md' />
                 </button>
             </div>
 
             <div>
                 <button onClick={handleAddToCart} className='flex items-center justify-center gap-2 w-[250px] rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
-                  <img src="../../../images/icon-cart.svg" alt="cart" className='inline-block mr-2 brightness-0' />
+                  <img src={iconCart} alt="cart" className='inline-block mr-2 brightness-0' />
                   <span className=' font-bold'>Add to cart</span>
                 </button>
             </div>
