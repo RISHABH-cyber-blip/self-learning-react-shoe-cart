@@ -1,13 +1,8 @@
-
-name: Deploy E-commerce Product
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'ecom-product/**'
-      - '.github/workflows/deploy.yml'
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,43 +11,39 @@ permissions:
   id-token: write
 
 concurrency:
-  group: github-pages
+  group: pages
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: ecom-product/package-lock.json
 
       - name: Install dependencies
-        working-directory: ecom-product
         run: npm ci
-
-      - name: Build React application
         working-directory: ecom-product
+
+      - name: Build
         run: npm run build
+        working-directory: ecom-product
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload built website
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ecom-product/dist
 
-      - name: Deploy website
-        id: deployment
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
         uses: actions/deploy-pages@v4
