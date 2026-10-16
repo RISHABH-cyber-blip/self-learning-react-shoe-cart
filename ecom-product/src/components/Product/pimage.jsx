@@ -3,6 +3,7 @@ import productImage1 from '../../../images/image-product-1.jpg'
 import productImage2 from '../../../images/image-product-2.jpg'
 import productImage3 from '../../../images/image-product-3.jpg'
 import productImage4 from '../../../images/image-product-4.jpg'
+import iconClose from '../../../images/icon-close.svg'
 
 const Pimage = () => {
     const images = [
@@ -80,7 +81,7 @@ const Pimage = () => {
                             className="absolute -top-10 right-0 text-3xl font-bold text-white hover:text-orange-500 cursor-pointer"
                             aria-label="Close gallery"
                         >
-                            <img src="/images/icon-close.svg" alt="Close" className="w-6 h-6" />
+                            <img src={iconClose} alt="Close" className="w-6 h-6" />
                         </button>
 
                         {/* Previous image */}
@@ -89,7 +90,7 @@ const Pimage = () => {
                             className="absolute left-0 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white w-11 h-11 flex items-center justify-center hover:text-orange-500 cursor-pointer"
                             aria-label="Previous image"
                         >
-                            <img src="/images/icon-previous.svg" alt="Previous" className="w-6 h-6" />
+                            <img src={iconPrevious} alt="Previous" className="w-6 h-6" />
                         </button>
 
                         {/* Large image */}
