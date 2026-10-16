@@ -47,7 +47,7 @@ const Pimage = () => {
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
                 >
-                    <div className="w-full aspect-squares">
+                    <div className="w-full aspect-square">
                         <img
                             src={images[selectedImage]}
                             alt="Fall Limited Edition Sneaker"
