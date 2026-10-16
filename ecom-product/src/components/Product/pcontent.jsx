@@ -37,7 +37,7 @@ const Pcontent = () => {
             Fall Limited Edition 
             <span className="block"> Sneaker</span>
         </h2>
-        <p className="mt-10 max-w-[500px] text-base leading-7 text-[#7a7f87] sm:text-lg sm:leading-8">
+          <p className="mt-10 max-w-lg text-base leading-7 text-[#7a7f87] sm:text-lg sm:leading-8">
           These low-profile sneakers are your perfect casual wear
           companion. Featuring a durable rubber outer sole, they’ll
           withstand everything the weather can offer.
@@ -63,7 +63,7 @@ const Pcontent = () => {
 
         <div className='flex mt-4 mt-10 gap-3 flex-col md:flex-row'>
 
-            <div className='flex items-center justify-between w-[120px] rounded-md bg-[#f7f8fd]'>
+            <div className='flex w-full max-w-32 items-center justify-between rounded-md bg-[#f7f8fd]'>
                <button onClick={() => setCount(Math.max(0, count - 1))} className='cursor-pointer'>
                  <img src={iconMinus} alt="minus" className='bg-[#f7f8fd] p-2 rounded-l-md' />
                </button>
@@ -74,7 +74,7 @@ const Pcontent = () => {
             </div>
 
             <div>
-                <button onClick={handleAddToCart} className='flex items-center justify-center gap-2 w-[250px] rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
+                <button onClick={handleAddToCart} className='flex w-full max-w-xs items-center justify-center gap-2 rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
                   <img src={iconCart} alt="cart" className='inline-block mr-2 brightness-0' />
                   <span className=' font-bold'>Add to cart</span>
                 </button>

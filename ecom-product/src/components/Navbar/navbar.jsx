@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import cartIcon from '../../../images/icon-cart.svg'
 import avatarImage from '../../../images/image-avatar.png'
 import Cart from '../Cart/cart'
+import menu from '../../../images/icon-menu.svg'
 
 
 
@@ -19,10 +20,13 @@ const Navbar = () => {
 
   return (
     <header className='shadow sticky z-50 top-0'>
-        <nav className='bg-white border-gray-200 px-1 lg:px-6 py-6.5'>
+        <nav className='bg-white border-gray-200 px-6  lg:px-6 py-3.5 md:py-6.5'>
              <div className='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'>
-                  <div className='flex items-center gap-14'>
-                    <h1 className="px-3 text-4xl font-extrabold tracking-tight text-black">
+                  <div className='flex items-center gap-3 md:gap-14'>
+                    <button>
+                      <img src={menu} />
+                    </button>
+                    <h1 className="px-3 text-[30px] sm:text-4xl font-bold sm-font-extrabold tracking-tight text-black">
                     sneakers
                   </h1>
                    
@@ -31,7 +35,7 @@ const Navbar = () => {
                         key={item.name}
                         to={item.path}
                         className={({ isActive }) =>
-                          `relative flex h-full items-center text-[16px] transition-colors no-underline 
+                          `hidden lg:flex relative flex h-full items-center text-[16px] transition-colors no-underline 
                           ${
                             isActive
                               ? "text-[#222222] after:absolute after:bottom-0 after:top-12 after:left-0 after:h-1 after:w-full after:bg-orange-500"
@@ -44,7 +48,7 @@ const Navbar = () => {
                     ))}
                   </div>
 
-                  <div className='flex items-center gap-12'>
+                  <div className='flex items-center gap-5 md:gap-9'>
                         <div className="relative">
                         <button
                           type="button"
@@ -53,7 +57,7 @@ const Navbar = () => {
                           aria-expanded={isCartOpen}
                           className="cursor-pointer"
                         >
-                          <img src={cartIcon} alt="" className="h-6 w-6" />
+                          <img src={cartIcon} alt="" className="h-4 w-4 md:h-6 md:w-6" />
                         </button>
 
                         {isCartOpen && (
@@ -61,7 +65,7 @@ const Navbar = () => {
                         )}
                       </div>
 
-                    <img src={avatarImage} alt="avatar" className='w-10 h-10 rounded-full' />
+                    <img src={avatarImage} alt="avatar" className='w-5 h-5 sm:w-10 sm:h-10 rounded-full' />
                   </div>
              </div>
 

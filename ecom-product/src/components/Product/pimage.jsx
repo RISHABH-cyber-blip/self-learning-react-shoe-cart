@@ -4,6 +4,8 @@ import productImage2 from '../../../images/image-product-2.jpg'
 import productImage3 from '../../../images/image-product-3.jpg'
 import productImage4 from '../../../images/image-product-4.jpg'
 import iconClose from '../../../images/icon-close.svg'
+import iconPrevious from '../../../images/icon-previous.svg'
+import iconNext from '../../../images/icon-next.svg'
 
 const Pimage = () => {
     const images = [
@@ -24,24 +26,57 @@ const Pimage = () => {
         setSelectedImage((prev) => (prev + 1) % images.length)
     }
 
+    const touchStartX = React.useRef(0)
+
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX
+    }
+
+    const handleTouchEnd = (e) => {
+        const diff = touchStartX.current - e.changedTouches[0].clientX
+        if (Math.abs(diff) > 50) diff > 0 ? nextImage() : previousImage()
+    }
+
     return (
         <>
             {/* Main product gallery */}
-            <div className="flex flex-col gap-5 ml-10 md:ml-20">
+            <div className="flex flex-col gap-5 w-full md:w-auto  md:ml-20">
 
-                <div className="w-full max-w-md">
-                    <div className="w-full aspect-square">
+                <div
+                    className="relative w-full md:max-w-md touch-pan-y"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                >
+                    <div className="w-full aspect-squares">
                         <img
-                            src={images[0]}
+                            src={images[selectedImage]}
                             alt="Fall Limited Edition Sneaker"
                             onClick={() => setIsLightboxOpen(true)}
-                            className="rounded-xl w-full h-full object-cover cursor-pointer"
+                            className="md:rounded-xl w-full h-full object-cover cursor-pointer"
                         />
                     </div>
+
+                    {/* Prev button (mobile only) */}
+                    <button
+                        onClick={previousImage}
+                        className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center"
+                        aria-label="Previous image"
+                    >
+                        <img src={iconPrevious} alt="" className="w-5 h-5" />
+                    </button>
+
+                    {/* Next button (mobile only) */}
+                    <button
+                        onClick={nextImage}
+                        className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center"
+                        aria-label="Next image"
+                    >
+                        <img src={iconNext} alt="" className="w-5 h-5" />
+                    </button>
                 </div>
 
                 {/* Main gallery thumbnails */}
-                <div className="flex gap-5 mt-5 justify-center md:justify-start">
+                <div className="flex gap-3 mt-5 justify-center sm:gap-5 md:justify-start">
                     {images.map((image, index) => (
                         <button
                             key={index}
@@ -106,7 +141,7 @@ const Pimage = () => {
                             className="absolute right-0 top-1/2 z-10 translate-x-1/2 -translate-y-1/2 rounded-full bg-white w-11 h-11 flex items-center justify-center hover:text-orange-500 cursor-pointer"
                             aria-label="Next image"
                         >
-                            <img src="/images/icon-next.svg" alt="Next" className="w-6 h-6" />
+                            <img src={iconNext} alt="Next" className="w-6 h-6" />
                         </button>
 
                         {/* Lightbox thumbnails */}
