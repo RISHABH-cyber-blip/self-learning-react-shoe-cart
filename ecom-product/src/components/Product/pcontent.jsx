@@ -29,23 +29,23 @@ const Pcontent = () => {
 
   return (
     <div className='flex flex-col ml-0  md:ml-0 md:mt-10 mt-5 '>
-        <h1 className='ml-0 text-sm font-bold uppercase tracking-[2px] text-gray-500 sm:text-[13px] sm:tracking-[3px]'>
+        <h1 className='ml-0 text-[10px] font-bold uppercase tracking-[2px] text-gray-500 md:text-[13px] sm:tracking-[3px]'>
             SNEAKER COMPANY
         </h1>
 
-        <h2 className='ml-0 text-3xl font-bold text-gray-800 sm:text-4xl md:ml-0 md:mt-3'>
+        <h2 className='ml-0 text-2xl font-bold text-gray-800 md:text-4xl md:ml-0 md:mt-3'>
             Fall Limited Edition 
             <span className="block"> Sneaker</span>
         </h2>
-          <p className="mt-10 max-w-lg text-base leading-7 text-[#7a7f87] sm:text-lg sm:leading-8">
+          <p className=" mt-5 md:mt-10 max-w-lg text-sm leading-7 text-[#7a7f87] md:text-lg sm:leading-8">
           These low-profile sneakers are your perfect casual wear
           companion. Featuring a durable rubber outer sole, they’ll
           withstand everything the weather can offer.
         </p>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-row items-center justify-between md:flex-col md:items-start gap-2 mt-5">
           {/* Current price and discount */}
-          <div className="flex items-center gap-3 mt-5">
+          <div className="flex items-center gap-3 ">
             <span className="text-2xl font-bold text-[#1d2026]">
               $125.00
             </span>
@@ -56,7 +56,7 @@ const Pcontent = () => {
           </div>
 
           {/* Original price */}
-          <span className="text-sm font-semibold text-gray-400 line-through">
+          <span className="text-base md:text-sm font-semibold whitespace-nowrap text-gray-400 line-through ">
             $250.00
           </span>
         </div>

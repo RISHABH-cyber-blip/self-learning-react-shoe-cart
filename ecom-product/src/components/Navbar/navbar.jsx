@@ -20,9 +20,9 @@ const Navbar = () => {
 
   return (
     <header className='shadow sticky z-50 top-0'>
-        <nav className='bg-white border-gray-200 px-6  lg:px-6 py-3.5 md:py-6.5'>
+        <nav className='bg-white border-gray-200 px-6 lg:px-6 py-3.5 md:py-6.5'>
              <div className='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'>
-                  <div className='flex items-center gap-3 md:gap-14'>
+                  <div className='flex items-center  gap-3 md:gap-14'>
                     <button>
                       <img src={menu} />
                     </button>
