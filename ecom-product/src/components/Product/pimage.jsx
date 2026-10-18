@@ -83,7 +83,7 @@ const Pimage = () => {
                             onClick={() => {
                                 setSelectedImage(index)
                                 setIsLightboxOpen(true)}}
-                            className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${
+                            className={`w-16 h-16 xl:w-20 xl:h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${
                                 selectedImage === index
                                     ? 'border-orange-500 opacity-60'
                                     : 'border-transparent hover:border-orange-500'
