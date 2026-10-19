@@ -6,12 +6,14 @@ import Cart from '../Cart/cart'
 import menu from '../../../images/icon-menu.svg'
 import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import closeIcon from '../../../images/icon-close.svg'
 
 
 
 const Navbar = () => {
   const { cartItems } = useContext(CartContext);
   const [isCartOpen, setIsCartOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
    const navItems = [
   { name: "Collections", path: "/collections" },
   { name: "Men", path: "/men" },
@@ -26,7 +28,7 @@ const Navbar = () => {
         <nav className='bg-white border-gray-200 px-6 lg:px-6 py-3.5 md:py-6.5'>
              <div className='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'>
                   <div className='flex items-center  gap-3 md:gap-14'>
-                    <button>
+                    <button onClick={() => setIsMenuOpen(true)} className="lg:hidden focus:outline-none" aria-label="Open menu">
                       <img src={menu} />
                     </button>
                     <h1 className="px-3 text-[30px] sm:text-4xl font-bold sm-font-extrabold tracking-tight text-black">
@@ -73,11 +75,37 @@ const Navbar = () => {
                         )}
                       </div>
 
-                    <img src={avatarImage} alt="avatar" className='w-5 h-5 sm:w-10 sm:h-10 rounded-full' />
+                    <img src={avatarImage}  alt="avatar" className='w-5 h-5 sm:w-10 sm:h-10 rounded-full ' />
                   </div>
              </div>
 
         </nav>
+       {isMenuOpen && (
+        <div className="fixed inset-0 z-50 flex">
+          <nav className="flex flex-col w-1/2 bg-white shadow-lg p-6 gap-4">
+            <button onClick={() => setIsMenuOpen(false)} className="relative top-4  focus:outline-none" aria-label="Close menu">
+              <img src={closeIcon} alt="Close menu" />
+            </button>
+
+            {navItems.map((item) => (
+                      <NavLink
+                        key={item.name}
+                        to={item.path}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={({ isActive }) =>
+                          ` relative flex top-8  items-center text-[13px] transition-colors no-underline text-black font-bold hover:text-gray-800`
+                           
+                        }
+                      >
+                        {item.name}
+                      </NavLink>
+              ))}
+              
+          </nav>
+          </div>
+        )}
+
+
     </header>
   )
 }
