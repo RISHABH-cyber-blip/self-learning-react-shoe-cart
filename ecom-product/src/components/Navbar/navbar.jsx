@@ -4,10 +4,13 @@ import cartIcon from '../../../images/icon-cart.svg'
 import avatarImage from '../../../images/image-avatar.png'
 import Cart from '../Cart/cart'
 import menu from '../../../images/icon-menu.svg'
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 
 
 const Navbar = () => {
+  const { cartItems } = useContext(CartContext);
   const [isCartOpen, setIsCartOpen] = React.useState(false);
    const navItems = [
   { name: "Collections", path: "/collections" },
@@ -50,7 +53,12 @@ const Navbar = () => {
 
                   <div className='flex items-center gap-5 md:gap-9'>
                         <div className="relative">
-                        <button
+                            {cartItems.length > 0 && (
+                              <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[10px] font-bold text-white">
+                                {cartItems.length}
+                              </span>
+                            )}
+                          <button
                           type="button"
                           onClick={() => setIsCartOpen((prev) => !prev)}
                           aria-label="Open cart"
