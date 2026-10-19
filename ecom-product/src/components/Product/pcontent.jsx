@@ -66,7 +66,7 @@ const Pcontent = () => {
 
         <div className='flex mt-4 mt-10 gap-3 flex-col md:flex-row'>
 
-            <div className='flex w-full lg:max-w-32 items-center justify-between rounded-md bg-[#f7f8fd]'>
+            <div className='flex w-full h-20 lg:h-34 lg:max-w-32 items-center justify-between rounded-md bg-[#f7f8fd]'>
                <button onClick={() => setCount(Math.max(0, count - 1))} className='cursor-pointer'>
                  <img src={iconMinus} alt="minus" className='bg-[#f7f8fd] p-2 rounded-l-md' />
                </button>
