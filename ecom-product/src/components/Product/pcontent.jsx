@@ -17,6 +17,9 @@ const Pcontent = () => {
     setCount(1); 
     return;
   }
+  else{
+    alert(`Added ${count} item(s) to the cart.`);
+  }
 
   addToCart({
     id: "fall-limited-edition-sneaker",
