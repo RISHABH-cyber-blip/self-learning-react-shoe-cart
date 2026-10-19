@@ -83,7 +83,7 @@ const Pcontent = () => {
             </div>
 
             <div className='flex w-full lg:max-w-45 items-center justify-between rounded-md bg-[#f7f8fd]'>
-                <button onClick={handleAddToCart} className='md:w-max  md:flex-none flex w-full max-w-xs items-center justify-center gap-2 rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
+                <button onClick={handleAddToCart} className='flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#ff7d1a] py-3 text-black hover:bg-[#ff9f43] cursor-pointer'>
                   <img src={iconCart} alt="cart" className='inline-block mr-2 brightness-0' />
                   <span className=' font-bold'>Add to cart</span>
                 </button>
