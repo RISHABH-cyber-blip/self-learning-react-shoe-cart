@@ -40,7 +40,7 @@ const Pimage = () => {
     return (
         <>
             {/* Main product gallery */}
-            <div className="flex flex-col gap-5 w-full md:w-auto  md:ml-20">
+            <div className="flex flex-col gap-5 w-full md:w-auto  md:ml-10">
 
                 <div
                     className="relative w-full md:max-w-md touch-pan-y"
