@@ -57,7 +57,7 @@ const Navbar = () => {
                         <div className="relative">
                             {cartItems.length > 0 && (
                               <span className="absolute -top-2 -right-2 flex h-4 w-4 items-center justify-center rounded-full bg-orange-500 text-[10px] font-bold text-white">
-                                {cartItems.length}
+                                {cartItems[0].quantity}
                               </span>
                             )}
                           <button

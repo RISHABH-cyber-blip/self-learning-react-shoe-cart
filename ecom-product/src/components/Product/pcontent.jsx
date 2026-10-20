@@ -17,6 +17,11 @@ const Pcontent = () => {
     setCount(1); 
     return;
   }
+  else if(count > 10){
+    alert("You have exceeded the maximum quantity of 10 items. Please reduce the quantity.");
+    setCount(10); 
+    return;
+  }
   else{
     alert(`Added ${count} item(s) to the cart.`);
   }

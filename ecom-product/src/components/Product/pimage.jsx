@@ -76,13 +76,13 @@ const Pimage = () => {
                 </div>
 
                 {/* Main gallery thumbnails */}
-                <div className="flex gap-3 mt-5 justify-center sm:gap-5 md:justify-start">
+                <div className="flex gap-3 mt-5 justify-center sm:gap-5 md:justify-start hidden md:flex">
                     {images.map((image, index) => (
                         <button
                             key={index}
                             onClick={() => {
                                 setSelectedImage(index)
-                                setIsLightboxOpen(true)}}
+                               }}
                             className={`w-16 h-16 xl:w-20 xl:h-20 rounded-xl overflow-hidden cursor-pointer border-2 ${
                                 selectedImage === index
                                     ? 'border-orange-500 opacity-60'
