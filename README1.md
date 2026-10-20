@@ -18,4 +18,11 @@ Users should be able to:
 - View the cart and remove items from it
 
 ## ScreenShot
+ 
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+
 
