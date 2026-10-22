@@ -36,7 +36,7 @@ const Pcontent = () => {
   };
 
   return (
-    <div className='flex flex-col ml-0  md:ml-0 md:mt-10 mt-5 '>
+    <div className='flex flex-col ml-0 mt-5 md:ml-0 md:mt-10  '>
         <h1 className='ml-0 text-[10px] font-bold uppercase tracking-[2px] text-gray-500 lg:text-[13px] sm:tracking-[3px]'>
             SNEAKER COMPANY
         </h1>

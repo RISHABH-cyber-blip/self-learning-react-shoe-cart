@@ -53,4 +53,13 @@ Users should be able to:
 
 ### What I learned
 
+# Mobile Responsive
+ ml-0 mt-5 md:ml-0 md:mt-10 
+ md:absolute md:inset-x-auto md:right-0 md:top-full md:mt-1
+ md:w-80 md:max-w-[calc(100vw-2rem)
+
+ This above code is for mobile and responsive ,the md is prefix for 768 or more width devices so where md use the css aplly on 768+ width and default css like ml-0 mt-5 used for below 768 width devices so before this project i don't know how to make thing mobile responsive now i know for which device i should use which prefix 
+
+ # CartContext
+
 
