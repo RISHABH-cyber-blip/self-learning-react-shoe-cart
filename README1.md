@@ -41,3 +41,16 @@ Users should be able to:
 ## My process
 
 ### Built with
+
+- JavaScript (ES modules) 
+- React 19.3.0
+- React DOM 19.3.0
+- React Router DOM 7.18.4
+- Tailwind CSS 4.3.3
+- Vite 8.3.2
+- GitHub and GitHub Pages
+- Mobile-first workflow
+
+### What I learned
+
+
