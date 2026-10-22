@@ -62,4 +62,47 @@ Users should be able to:
 
  # CartContext
 
+1. I already know about the cart context But after this project I'm much more confident and experienced before the project.This project helped me more to understand the cart context and how it works.
+
+2. 
+```const CartContext = createContext();
+
+const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);
+
+      if (!existingItem) {
+        return [...prevItems, item];
+      }
+
+      return prevItems.map((cartItem) =>
+        cartItem.id === item.id
+              ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+          : cartItem
+      );
+    });
+  };
+
+
+  return (
+    <CartContext.Provider value={{ cartItems, addToCart}}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+```
+
+This part of code helps me understand how to use CartContext here. What we do, we use createContext from React and useCartContext and Cart. How we made CartProvider, where our cart items of array are stored and we manage them. Like we made a function addToCart, how we provide CartContext for the children for all the components, and values are  provide  a function through a CartContextProvider.
+
+
+# Navbar
+? "text-[#222222] after:absolute after:bottom-0 after:top-12 after:left-0 after:h-1 after:w-full after:bg-orange-500"
+
+In the navbar, I already know about all the CSS and HTML and function that are used in that. But the new thing I learned is after effect in the CSS in my navbar. When I go to different pages, there is some CSS part on my navbar's elements. This CSS I saw the first time.This CSS basically means a new element or virtual element on my text.
+
+# Pcontent
+
 
