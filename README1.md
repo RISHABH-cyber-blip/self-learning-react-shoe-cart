@@ -45,7 +45,6 @@ Users should be able to:
 - JavaScript (ES modules) 
 - React 19.3.0
 - React DOM 19.3.0
-- React Router DOM 7.18.4
 - Tailwind CSS 4.3.3
 - Vite 8.3.2
 - GitHub and GitHub Pages
@@ -166,4 +165,23 @@ In this section I learn the main thing is that how to handle add to cart button.
 
     In pimage section, the most important and new thing I learned is how to handle my lightbox in mobile touch screen. So there is a method React useRef where I use touchstartx and what I do I made a handle to start. What is do? It's take in the x axis or where user fingerprints in the which portion in the which pixels it is in the current situation. And how it one handle touchend? So what it give see in the current position user moves finger to the left or the right, so where finger goes it will calculate and minus through our current finger. And what the difference we get we will see if it is more than 50 then we will move that image. So if it is more than 50 we will call our next image. If it is minus 50 or other things then it is previous image.
 
+```
+
+### Continued development
+There are some areas where I want to continue my development in my future project, like useContext and mobile responsiveness. In useContext there is some part where I am not fully confident, and mobile responsiveness in such touch screen and more feature about in CSS I'm not fully confident in that. And also continue to React Router library .
+
+### Useful resources
+- [tailwind](https://tailwindcss.com/) I like this because it makes it easier for me writers yeses of a particular content Also, help me in mobile responsiveness CSS.
+
+In this project there are no many other resources that I used in this project, so there is no more useful resources. Tailwind is fine. I find Tailwind is best and perfect.
+
+### AI Collaboration
+
+- The tools I used in this project are ChatGPT and Claude and Copilot in VS Code.
+- I used ChatGPT and Claude for function understanding and uploading a project to liveurl in GitHub and  sort of searching for a CSS in this project.I used Copilot for identifying unnecessary items or some sort of function and some issues, but I use Copilot as a way of not directly answering or working in the project. I just take a path and I build up with my own  mind.
+- The project is not complex, so AI didn't make any error. But  have some faults like adding an unuseful remove cart function which doesn't use in this project.
+
+## Author
+- Website - [Rishabh](https://rishabh-cyber-blip.github.io/self-learning-react-shoe-cart/)
+- Frontend Mentor - [RISHABH-cyber-blip](https://www.frontendmentor.io/profile/RISHABH-cyber-blip)
 
